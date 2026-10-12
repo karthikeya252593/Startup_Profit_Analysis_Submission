@@ -1,0 +1,54 @@
+==========================================================================
+STARTUP PROFIT ANALYSIS - REGRESSION OUTPUT
+Source: Profit.ipynb (scikit-learn LinearRegression)
+==========================================================================
+
+MODEL SETUP
+-----------
+Algorithm          : Multiple linear regression (sklearn LinearRegression)
+Independent (X)    : RD_Spend, Administration, Marketing_Spend
+Dependent (y)      : Profit
+Dataset size       : 50 rows
+Train / test split : 80% / 20%  (40 train rows, 10 test rows)
+random_state       : 42
+
+COEFFICIENTS
+------------
+Intercept          :  54071.87574599082
+RD_Spend           :      0.8037792756297524
+Administration     :     -0.06792917400149973
+Marketing_Spend    :      0.031241545897732932
+
+Fitted equation:
+Profit = 54071.88 + 0.8038 * RD_Spend - 0.0679 * Administration
+         + 0.0312 * Marketing_Spend
+
+MODEL PERFORMANCE (test set, 10 rows)
+-------------------------------------
+R2 Score           :          0.9000653083037321
+MAE                :       6979.152252370402
+MSE                :   80926321.22295158
+RMSE               :       8995.905803361415
+
+PREDICTIONS FOR NEW INPUTS
+--------------------------
+Input  RD_Spend    Administration  Marketing_Spend  Predicted Profit
+  1    21892.92    81910.77        164270.70        71236.89
+  2    23940.93    96489.63        137001.10        71040.76
+
+CORRELATION WITH PROFIT
+-----------------------
+RD_Spend           : 0.97
+Marketing_Spend    : 0.75
+Administration     : 0.20
+(RD_Spend vs Marketing_Spend: 0.72)
+
+INTERPRETATION
+--------------
+- Each extra $1 of R&D spend adds about $0.80 of profit, other spend held
+  constant. R&D is the dominant driver.
+- Marketing adds about $0.03 per $1 once R&D is accounted for; its strong
+  correlation with profit largely overlaps with R&D.
+- Administration has a small negative effect (about -$0.07 per $1).
+- The model explains 90% of the variation in profit on unseen data, with
+  a typical error (RMSE) of about $9,000, roughly 8% of average profit.

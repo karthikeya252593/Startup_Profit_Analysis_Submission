@@ -1,0 +1,33 @@
+==========================================================================
+DATASET SOURCE CONFIRMATION
+Project: Startup Profit Analysis
+==========================================================================
+
+Dataset source used : DB (database)
+
+Database type       : MySQL
+Database name       : project_profit_analysis
+Table               : startup
+Host                : 18.136.157.135
+Connection method   : Python mysql.connector (Google Colab)
+Extraction query    : SELECT * FROM startup
+
+The table was extracted from the MySQL database and saved as CSV files:
+  - startup_profit_analysis.csv          (used for the Python analysis)
+  - startup_profit_analysis_powerbi.csv  (prepared for Power BI)
+
+Power BI dashboard
+  File    : Startup_Profit_Analysis_Dashboard.pbix
+  Import  : startup_profit_analysis_powerbi.xlsx (Excel copy of the
+            exported CSV above, same 50 rows)
+  Tables  : startup_profit_analysis_powerbi (data + Startup_ID +
+            DAX column "Predicted Profit")
+            startup_profit_analysis_powerbi (2) (data, used for totals)
+            REGRESSION_RESULTS (R2 SCORE, MAE, MSE, RMSE)
+
+Dataset details
+  Rows    : 50
+  Columns : 5 (RD_Spend, Administration, Marketing_Spend, State, Profit)
+  Missing values : 0
+  Duplicate rows : 0
+  States  : New York (17), California (17), Florida (16)
